@@ -16,9 +16,53 @@ The focus is on **clean organized code**, **reproducible results**,
   - `preprocessing.py` → Functions for cleaning and preparing data  
 - `.gitignore`  
 - `requirements.txt`  
-- `README.md
+- `README.md`
 
 **Note:** Raw data is not included in repo intentionally. 
+
+## Workflow Overview
+
+### 1. Data Exploration (`exploration.ipynb`)
+
+- Load the raw dataset  
+- Inspect structure and missing values  
+- Generate summary statistics  
+- Visualize survival patterns
+
+---
+
+### 2. Data Preprocessing (`src/preprocessing.py`)
+
+- Handle missing values  
+- Encode categorical variables (e.g., one-hot encoding for `Embarked`)  
+- Separate target variable (`Survived`) for training  
+- Return feature matrix `X` and target vector `y`
+
+---
+
+### 3. Modeling
+
+The following models were implemented and evaluated:
+
+- Logistic Regression  
+- Random Forest  
+- Gradient Boosting  
+
+Each model:
+- Uses a stratified train/validation split  
+- Is trained on preprocessed features  
+- Outputs validation accuracy  
+- Optionally inspects feature importance
+
+---
+
+### 4. Prediction
+
+- Load Kaggle test dataset  
+- Apply the same preprocessing pipeline  
+- Generate predictions  
+- Save submission file in `submissions/`
+
 
 ## Dependencies
 - pandas
