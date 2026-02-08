@@ -55,7 +55,6 @@ This project demonstrates a structured machine learning workflow:
 
 **Note:** Raw data is not included in repo intentionally. 
 
-
 ## Dependencies
 - pandas
 - scikit-learn
@@ -66,13 +65,26 @@ pip install -r requirements.txt
 ```
 - See `requirements.txt` for exact versions.
 
-## Instalation
-1. Clone the repository:
-
+## How to use
+1. **Clone the repository**
 ```bash
 git clone https://github.com/davidsaridakis/titanic-data-set.git
 cd titanic-data-set
+```
+
+2. **Activate Virtual Environment**
+```bash
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate  
+# or venv\Scripts\activate on Windows
+```
+
+3. **Install dependencies**
+```bash
 pip install -r requirements.txt
 ```
+
+4. **Run notebooks in order**
+`notebooks/exploration.ipynb` → Explore and clean data
+`notebooks/model_comparison.ipynb` → Train and compare models
+`notebooks/final_model.ipynb` → Train best model on full dataset and generate submission
