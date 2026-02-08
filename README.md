@@ -1,73 +1,66 @@
 # Titanic Data Analysis & Modeling
 
-An demonstration of a machine learning workfloe on the Titanic dataset from Kaggle. Includes data exploration, preprocessing, model building, evaluation, predictions and model comparisons.
+An demonstration of a machine learning workflow on the Titanic dataset from Kaggle. Includes data exploration, preprocessing, model building, evaluation, model comparisons and predictions.
 
-The focus is on **clean organized code**, **reproducible results**, 
+My focus was on clean organized code, reproducible results, and a logical workflow.  
+
+---
+
+## Project Overview
+
+This project demonstrates a structured machine learning workflow:
+
+1. **Data Exploration**  
+   - Initial look at the training data  
+   - Missing value checks and summary statistics  
+   - Visualizations of gender_submission survival rates 
+
+2. **Data Preprocessing** `src/preprocessing.py`
+   - Cleaning raw data  
+   - Handling missing values  
+   - Encoding categorical variables 
+   - Basic feature engineering 
+   - Separate target variable (`Survived`) for training
+   - Implemented in `src/preprocessing.py` for reusability
+
+3. **Model Comparison**  
+   - Models included: Logistic Regression, Random Forest, Gradient Boosting; coming from `src/models.py` for efficiency and reusability
+   - Scaling features when required
+   - Train/validation split to evaluate models  
+   - Accuracy comparison visualized in `notebooks/model_comparison.ipynb`  
+   - Logistic Regression with scaling identified as the best performer
+
+4. **Final Model & Submission**  
+   - Best model retrained on the full training dataset  
+   - Predictions generated for the test set  
+   - Submission CSV saved to `data/submissions/` with versioned filenames  
+   - Implemented in `notebooks/final_model.ipynb`
+
+---
 
 ## Project Structure
 
-- `data/raw/` → Raw CSV files downloaded from Kaggle (not tracked in Git)   
+- `data/raw/` → Raw CSV files downloaded from Kaggle (not tracked in Git)  
+- `data/submissions/` → Versioned submission CSVs
 - `notebooks/` → Jupyter notebooks  
-  - `exploration.ipynb` 
-   - `model_random_forest.ipynb` → Random Forest  
-  - `model_logistic_regression.ipynb` → Logistic Regression  
-  - `model_gradient_boosting.ipynb` → Gradient Boosting  
+  - `exploration.ipynb` → Initial data exploration
+   - `model_comparison.ipynb`  
+  - `final_model.ipynb` → Train and test most accurate model on full dataset and generate submission CSV   
 - `src/` → Python scripts  
-  - `preprocessing.py` → Functions for cleaning and preparing data  
+  - `preprocessing.py` → Functions for cleaning and preparing data
+  - `models.py` → Return a dictionary of models to be used in model comparison
 - `.gitignore`  
 - `requirements.txt`  
 - `README.md`
 
 **Note:** Raw data is not included in repo intentionally. 
 
-## Workflow Overview
-
-### 1. Data Exploration (`exploration.ipynb`)
-
-- Load the raw dataset  
-- Inspect structure and missing values  
-- Generate summary statistics  
-- Visualize survival patterns
-
----
-
-### 2. Data Preprocessing (`src/preprocessing.py`)
-
-- Handle missing values  
-- Encode categorical variables (e.g., one-hot encoding for `Embarked`)  
-- Separate target variable (`Survived`) for training  
-- Return feature matrix `X` and target vector `y`
-
----
-
-### 3. Modeling
-
-The following models were implemented and evaluated:
-
-- Logistic Regression  
-- Random Forest  
-- Gradient Boosting  
-
-Each model:
-- Uses a stratified train/validation split  
-- Is trained on preprocessed features  
-- Outputs validation accuracy  
-- Optionally inspects feature importance
-
----
-
-### 4. Prediction
-
-- Load Kaggle test dataset  
-- Apply the same preprocessing pipeline  
-- Generate predictions  
-- Save submission file in `submissions/`
-
 
 ## Dependencies
 - pandas
 - scikit-learn
 - seaborn
+- matplotlib
 ```bash
 pip install -r requirements.txt
 ```
