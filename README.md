@@ -39,9 +39,9 @@ This project demonstrates a structured machine learning workflow:
 ---
 
 ## Project Structure
-
-- `data/raw/` → Raw CSV files downloaded from Kaggle (not tracked in Git)  
-- `data/submissions/` → Versioned submission CSVs
+- `data/`
+  - `raw/` → Raw CSV files downloaded from Kaggle (not tracked in Git)  
+  - `submissions/` → Versioned submission CSVs
 - `notebooks/` → Jupyter notebooks  
   - `exploration.ipynb` → Initial data exploration
    - `model_comparison.ipynb`  
