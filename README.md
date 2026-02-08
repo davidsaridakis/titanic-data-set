@@ -85,6 +85,6 @@ pip install -r requirements.txt
 ```
 
 4. **Run notebooks in order**
-`notebooks/exploration.ipynb` → Explore and clean data
-`notebooks/model_comparison.ipynb` → Train and compare models
-`notebooks/final_model.ipynb` → Train best model on full dataset and generate submission
+- `notebooks/exploration.ipynb` → Explore and clean  data
+- `notebooks/model_comparison.ipynb` → Train and compare models
+- `notebooks/final_model.ipynb` → Train best model on full dataset and generate submission
